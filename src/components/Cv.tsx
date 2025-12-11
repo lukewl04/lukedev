@@ -1,53 +1,22 @@
-import React, { useEffect, useState } from "react";
-import * as pdfjsLib from "pdfjs-dist";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
-// Use the correct versioned CDN
-pdfjsLib.GlobalWorkerOptions.workerSrc =
-  "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js";
-
-
 const DownloadCV: React.FC = () => {
-  const [text, setText] = useState("");
-
-  useEffect(() => {
-    const loadPdf = async () => {
-      const pdfUrl = "/LukesCv.pdf";
-      const loadingTask = pdfjsLib.getDocument(pdfUrl);
-      const pdf = await loadingTask.promise;
-      let fullText = "";
-
-      for (let i = 1; i <= pdf.numPages; i++) {
-        const page = await pdf.getPage(i);
-        const content = await page.getTextContent();
-        const strings = content.items.map((item: any) => item.str);
-        fullText += strings.join(" ") + "\n";
-      }
-
-      setText(fullText);
-    };
-
-    loadPdf();
-  }, []);
+  // Google Drive direct download link
+  const cvUrl =
+    "https://drive.google.com/uc?export=download&id=1-6JLpX_8J3O_VAY0oYyXp7huh8JWR-kk";
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="text-center mb-8">
-        <a href="/LukesCv.pdf" download className="btn btn-outline-primary">
+    <div className="max-w-4xl mx-auto p-6 text-center">
+      <a
+        href={cvUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="btn space-button"
+      >
         📄 Download My CV
       </a>
-      </div>
-      <div>
-
-
-      </div>
-      {/* <div className="bg-white shadow-lg rounded-lg p-8">
-        <h4 className="text-xl font-bold mb-4">CV Text Preview:</h4>
-        <div className="whitespace-pre-wrap text-sm leading-relaxed text-gray-700 font-mono">
-          {text}
-        </div>
-      </div> */}
     </div>
   );
 };

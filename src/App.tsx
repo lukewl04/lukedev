@@ -1,25 +1,41 @@
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home.tsx";
-import About from "./pages/About.tsx";
-import Projects from "./pages/Projects.tsx";
-import Contact from "./pages/Contact.tsx";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 import MyNavbar from "./components/Navbar";
+import StarField from "./components/StarField";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css"; // Your custom CSS
-
+import "./styles/themes.css";
+import NebulaParallax from "./components/NebulaParallax";
 function App() {
   return (
     <div className="app-container">
+      <div className="nebula-back" />
+      <div className="nebula-front" />
+      <NebulaParallax /> 
+      {/* ⭐ Dynamic Starfield Background */}
+      <StarField />
+      {/* Navbar */}
       <MyNavbar />
+
+      {/* Main Content – single scrolling page */}
       <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <section id="home" className="page-section">
+          <Home />
+        </section>
+
+        <section id="projects" className="page-section">
+          <Projects />
+        </section>
+
+        <section id="about" className="page-section">
+          <About />
+        </section>
+
+        <section id="contact" className="page-section">
+          <Contact />
+        </section>
       </main>
-      {/* You could add a footer here */}
     </div>
   );
 }
