@@ -9,7 +9,7 @@ const Contact = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
-
+//edit
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
