@@ -10,9 +10,8 @@ import NebulaParallax from "./components/NebulaParallax";
 function App() {
   return (
     <div className="app-container">
-    <div className="nebula-back nebula-layer" />
-    <div className="nebula-front nebula-layer" />
-
+      <div className="nebula-back" />
+      <div className="nebula-front" />
       <NebulaParallax /> 
       {/* ⭐ Dynamic Starfield Background */}
       <StarField />
