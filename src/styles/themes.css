@@ -381,31 +381,68 @@ html {
    NEBULA BACKGROUND LAYERS
    ================================ */
 
-.nebula-back,
-.nebula-front {
+/* ================================
+   NEBULA BACKGROUND WITH BLUR EDGE
+   ================================ */
+
+.nebula-layer {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 150dvh;
-  background-repeat: no-repeat;
-  background-size: 150%;
-  background-position: center;
+  height: 120dvh;
   pointer-events: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;      /* show full image */
+  overflow: hidden;              /* hide blur overflow */
   will-change: transform;
 }
 
+/* BACK LAYER (farther) */
 .nebula-back {
-  background-image: url("/nebula2.jpg");
+  --nebula-img: url("/nebula2.jpg");
+  background-image: var(--nebula-img);
   opacity: 0.35;
   z-index: -3;
 }
 
+/* FRONT LAYER (nearer haze) */
 .nebula-front {
-  background-image: url("/nebula2.jpg");
-  opacity: 0.10;
+  --nebula-img: url("/nebula2.jpg");
+  background-image: var(--nebula-img);
+  opacity: 50;
   z-index: -2;
 }
+
+/* BLURRING EDGE EFFECT */
+.nebula-layer::before {
+  content: "";
+  position: absolute;
+  inset: -15%;                        /* extend beyond edges */
+  background-image: var(--nebula-img);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;             /* fill + crop (for blur) */
+  filter: blur(10px);
+  transform: scale(1.05);
+  opacity: 0.9;
+  z-index: -1;
+}
+
+/* Mobile tweak: slightly stronger blur, safer sizing */
+@media (max-width: 768px) {
+  .nebula-layer {
+    background-size: contain;
+  }
+
+  .nebula-layer::before {
+    inset: -20%;
+    filter: blur(30px);
+    transform: scale(1.08);
+  }
+}
+
 
 /*Mobile Optimisations*/
 

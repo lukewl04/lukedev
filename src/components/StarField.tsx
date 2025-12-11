@@ -10,14 +10,14 @@ type ScrollStar = {
 };
 
 const StarField: React.FC = () => {
-  // Background stars (your original logic)
+  // Background stars 
   const stars = useMemo(() => {
     const count = 150 + Math.floor(Math.random() * 71);
     return Array.from({ length: count }).map(() => ({
       top: Math.random() * 100,
       left: Math.random() * 100,
       size: 1 + Math.random() * 2,
-      delay: Math.random() * 10,
+      delay: Math.random() * 5,
       opacity: 0.4 + Math.random() * 0.6
     }));
   }, []);
