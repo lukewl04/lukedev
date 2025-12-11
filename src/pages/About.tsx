@@ -55,7 +55,7 @@ const About = () => {
                       data-bs-target="#cvCarousel"
                       data-bs-slide-to={index}
                       className={activeIndex === index ? "active" : ""}
-                      aria-current={activeIndex === index ? "true" : ""}
+                      aria-current={activeIndex === index ? "true" : undefined}
                       aria-label={label}
                       onClick={() => goToSlide(index)}
                     />

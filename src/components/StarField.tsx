@@ -1,12 +1,6 @@
 import React, { useMemo, useEffect, useState, useRef } from "react";
 
-type Star = {
-  top: number;
-  left: number;
-  size: number;
-  delay: number;
-  opacity: number;
-};
+
 
 type ScrollStar = {
   id: number;
