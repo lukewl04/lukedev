@@ -15,12 +15,13 @@ const MyNavbar = () => {
             <Nav.Link href="#home" className="space-link">
               Home
             </Nav.Link>
-            <Nav.Link href="#projects" className="space-link">
-              Projects
-            </Nav.Link>
             <Nav.Link href="#about" className="space-link">
               About
             </Nav.Link>
+            <Nav.Link href="#projects" className="space-link">
+              Projects
+            </Nav.Link>
+
             <Nav.Link href="#contact" className="space-link">
               Contact
             </Nav.Link>

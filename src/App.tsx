@@ -23,14 +23,14 @@ function App() {
         <section id="home" className="page-section">
           <Home />
         </section>
+        <section id="about" className="page-section">
+          <About />
+        </section>
 
         <section id="projects" className="page-section">
           <Projects />
         </section>
 
-        <section id="about" className="page-section">
-          <About />
-        </section>
 
         <section id="contact" className="page-section">
           <Contact />

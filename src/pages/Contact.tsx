@@ -99,7 +99,7 @@ const Contact = () => {
 
               {submitted && (
                 <Alert variant="success" className="space-alert">
-                  Thank you! Your message has been sent.
+                  Im sorry, this feature hasnt been implemented yet. Please Email me.
                 </Alert>
               )}
 
@@ -127,9 +127,8 @@ const Contact = () => {
                     required
                   />
                 </Form.Group>
-
                 <Form.Group className="mb-4">
-                  <Form.Label>Message</Form.Label>
+                  <Form.Label>Message (This feature hasnt been implemented yet, Please email me.)</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={5}
