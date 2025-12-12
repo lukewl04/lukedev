@@ -2,7 +2,7 @@ import DownloadCV from "../components/Cv";
 import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const SLIDE_COUNT = 6;
+const SLIDE_COUNT = 5;
 
 const About = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -35,7 +35,6 @@ const About = () => {
                   "Profile",
                   "Skills",
                   "Education",
-                  "University",
                   "Experience",
                   "Projects",
                 ].map((label, index) => (
@@ -110,7 +109,12 @@ const About = () => {
                       <h3 className="text-center space-subheading mb-4">
                         Education
                       </h3>
-
+                        <div className="space-panel p-4">
+                        <h5>Glasgow Caledonian University</h5>
+                        <p>BSc (Hons) Software Development</p>
+                        <p>What Knowledge I Gained?</p>
+                        <p>Devops Pipelines - Functional Programming - Machine Learning - Full Stack Development</p>
+                      </div>
                       <div className="space-panel p-4 mb-3">
                         <h5>City of Glasgow College</h5>
                         <p>HNC / HND Software Development</p>
@@ -123,22 +127,9 @@ const About = () => {
                     </section>
                   )}
 
-                  {/* UNIVERSITY */}
-                  {activeIndex === 3 && (
-                    <section className="space-section">
-                      <h3 className="text-center space-subheading mb-4">
-                        University
-                      </h3>
-
-                      <div className="space-panel p-4">
-                        <h5>Glasgow Caledonian University</h5>
-                        <p>BSc (Hons) Software Development</p>
-                      </div>
-                    </section>
-                  )}
 
                   {/* EXPERIENCE */}
-                  {activeIndex === 4 && (
+                  {activeIndex === 3 && (
                     <section className="space-section">
                       <h3 className="text-center space-subheading mb-4">
                         Work Experience
@@ -161,7 +152,7 @@ const About = () => {
                   )}
 
                   {/* PROJECTS / INTERESTS */}
-                  {activeIndex === 5 && (
+                  {activeIndex === 4 && (
                     <section className="space-section">
                       <h3 className="text-center space-subheading mb-4">
                         Intrests
