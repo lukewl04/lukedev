@@ -65,16 +65,15 @@ body {
   z-index: -1;               /* above background, below content */
 }
 
-/* Individual stars – using your 2px size + glow + timing feel */
+/* Individual stars */
 .star {
   position: absolute;
-  width: 2px;               /* your value */
-  height: 2px;              /* your value */
+  width: 2px;               
   background: #ffffff;
   border-radius: 50%;
-  filter: drop-shadow(0 0 4px #ffffff); /* your glow from .stars-front */
+  box-shadow: 0 0 4px rgba(255,255,255,0.8); /* much cheaper than filter */
   
-  /* reuse your 60s drift + 2s twinkle style */
+  
   animation:
     starDrift 40s linear infinite alternate,
     starTwinkle 2s ease-in-out infinite;
@@ -96,7 +95,7 @@ body {
   position: fixed;
   background: #ffffff;
   border-radius: 50%;
-  filter: drop-shadow(0 0 4px #fff);
+  box-shadow: 0 0 4px rgba(255,255,255,0.8);
   animation: scrollBurst 0.7s ease-out forwards;
   pointer-events: none;
 }
@@ -379,19 +378,25 @@ html {
    NEBULA BACKGROUND LAYERS
    ================================ */
 
+/* safer full-viewport fixed layer (no 100vw overflow) */
 .nebula-back,
 .nebula-front {
   position: fixed;
-  top: 0;
   left: 0;
-  width: 100vw;
-  height: 150vh;
+  right: 0;
+
+  /* add extra height so parallax never reveals empty space */
+  top: -30vh;
+  bottom: -30vh;
+
   background-repeat: no-repeat;
   background-size: 150%;
   background-position: center;
+
   pointer-events: none;
   will-change: transform;
 }
+
 
 .nebula-back {
   background-image: url("/nebula2.jpg");
@@ -463,5 +468,13 @@ html {
     gap: 1rem;
   }
 }
+
+@media (max-width: 768px) {
+  .star {
+    animation: starTwinkle 3.5s ease-in-out infinite; /* keep only twinkle */
+    /* or: animation: none; */
+  }
+}
+
 
 
