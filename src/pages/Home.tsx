@@ -6,17 +6,17 @@ const Home: React.FC = () => {
           Software Development • React • Python
         </p>
 
-        <h1 className="space-text mb-3">Hello, I'm Luke</h1>
+        <h1 className="space-text mb-3">Hello, I'm Luke!</h1>
 
         <p className="mt-2">
-          Software Development student specialising in React, Python, and full-stack projects.
-          Explore my work, experience, and how I bring ideas to life through code.
+          Software development student at Glasgow Caledonian University focused on machine learning, full-stack development, and data-driven solutions with Python.
+          Feel free to explore my projects!
         </p>
 
         {/* CTA buttons */}
         <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
           <a href="#projects" className="btn space-button">
-            View Projects
+            Projects
           </a>
           <a href="#about" className="btn space-button">
             About Me
