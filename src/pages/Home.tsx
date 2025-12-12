@@ -3,7 +3,7 @@ const Home: React.FC = () => {
     <div className="container text-center">
       <div className="card-space mx-auto home-hero" style={{ maxWidth: "650px" }}>
         <p className="text-uppercase mb-2" style={{ letterSpacing: "0.15em", fontSize: "0.8rem" }}>
-          Software Development • React • Python
+          Software Development • Machine Learning • Full Stack 
         </p>
 
         <h1 className="space-text mb-3">Hello, I'm Luke!</h1>

@@ -216,25 +216,32 @@ body {
   text-shadow: 0 0 4px rgba(176, 102, 255, 0.6);
 }
 
-/* Carousel arrows */
-.nav-arrow {
-  width: 40px !important;
-  height: 40px !important;
-  padding: 0 !important; /* override any global button padding */
-  border-radius: 50% !important;
-  border: 1px solid #c299ff !important;
-  background: rgba(10, 0, 30, 0.95) !important;
-  color: #f5e8ff !important;
+.about-carousel-layout {
+  display: grid;
+  grid-template-columns: 48px 1fr 48px;
+  align-items: center;
+  gap: 12px;
+}
+
+.carousel-content {
+  min-width: 0; /* prevents grid overflow issues */
+}
+
+.carousel-arrow {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 0 8px rgba(194, 148, 255, 0.6);
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.15s ease,
-    background 0.15s ease;
 }
+
+@media (max-width: 768px) {
+  .about-carousel-layout {
+    grid-template-columns: 1fr;
+  }
+  .carousel-arrow {
+    display: none;
+  }
+}
+
 
 .nav-arrow:hover {
   background: rgba(160, 90, 255, 0.25);
