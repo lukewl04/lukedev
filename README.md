@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+# 👋 Luke Dev – Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal developer portfolio showcasing projects in **React**, **Python**, and **data-driven applications**, with a focus on clean UI, real-world problem solving, and full-stack development.
 
-Currently, two official plugins are available:
+This site highlights selected projects, technical skills, and ongoing work as I continue to grow as a developer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🌐 Live Site
+https://lukedev.xyz 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## ✨ Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- 🚀 Clean, modern single-page portfolio
+- 🧩 Project showcase with screenshots and descriptions
+- 🌌 Custom space-themed UI
+- ⚛️ Built with React
+- 📱 Responsive layout
+- 🧠 Focus on real projects, not demos
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **React**
+- **JavaScript (ES6)**
+- **HTML5 / CSS3**
+- **Bootstrap**
+- **Custom theming**
+
+### Other Tools
+- **Git**
+- **GitHub**
+- **VS Code**
+- **Chrome DevTools**
+
+---
+
+## 📂 Projects Featured
+
+### 🌌 Planet Dashboard
+A full-stack planet visibility dashboard built with **React**, **FastAPI**, and **Astropy**.  
+Calculates real-time planetary positions based on user location and visualises the solar system.
+
+> More projects coming soon.
+
+---
+
