@@ -1,11 +1,19 @@
 const projects = [
   {
     title: "Planet Tracker",
-    image: "/planet_tracker.png", 
+    image: "/planet_tracker.png",
     description:
       "A real-time planet visibility tracker built with React, FastAPI, and Astropy. Calculates planetary positions based on user location and visualises the solar system in 2D.",
     tech: ["React", "FastAPI", "Python", "Astropy"],
     link: "https://github.com/lukewl04/Planet-Dashboard",
+  },
+  {
+    title: "Master XP",
+    image: "/masterxp.png", 
+    description:
+      "A gamified daily task manager that turns small tasks into experience points. Features secure authentication, persistent user data, and a real-time XP and leveling system.",
+    tech: ["React", "Auth0", "Node.js", "Express", "Supabase", "PostgreSQL"],
+    link: "https://github.com/lukewl04/MasterXP",
   },
 ];
 
