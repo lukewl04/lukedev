@@ -2,7 +2,28 @@ import { useState } from 'react';
 import { Container, Row, Col, Form, Button, Card, Alert } from 'react-bootstrap';
 import { Envelope, Phone, GeoAlt, Linkedin, Github } from 'react-bootstrap-icons';
 
+
+
+
 const Contact = () => {
+
+    const buildMailtoLink = () => {
+    const to = "lukelukewl@gmail.com";
+
+    const subject = `Website contact from ${formData.name || "Someone"}`;
+
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      "",
+      "Message:",
+      formData.message,
+    ].join("\n");
+
+    // encodeURIComponent is IMPORTANT (handles spaces, new lines, symbols)
+    return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,13 +38,20 @@ const Contact = () => {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
-    setTimeout(() => setSubmitted(false), 3000);
-  };
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+
+  const mailto = buildMailtoLink();
+  window.location.href = mailto;
+
+  // optional UI feedback
+  setSubmitted(true);
+  setTimeout(() => setSubmitted(false), 3000);
+
+  // optional: clear the form AFTER opening mail app
+  setFormData({ name: "", email: "", message: "" });
+};
+
 
   return (
     <Container className="my-5 contact-container">
@@ -128,7 +156,7 @@ const Contact = () => {
                   />
                 </Form.Group>
                 <Form.Group className="mb-4">
-                  <Form.Label>Message (This feature hasnt been implemented yet, Please email me.)</Form.Label>
+                  <Form.Label>Message</Form.Label>
                   <Form.Control
                     as="textarea"
                     rows={5}
