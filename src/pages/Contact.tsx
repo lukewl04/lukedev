@@ -29,7 +29,7 @@ const Contact = () => {
     email: '',
     message: ''
   });
-  const [submitted, setSubmitted] = useState(false);
+  const [setSubmitted] = useState(false);
 //edit
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
