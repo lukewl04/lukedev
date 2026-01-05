@@ -13,7 +13,7 @@ const About = () => {
             <div className="card-body">
               {/* Bootstrap Carousel */}
               <div style={{ position: "relative", paddingLeft: "80px", paddingRight: "80px" }}>
-                <div id="aboutCarousel" className="carousel slide" data-bs-ride="carousel">
+                <div id="aboutCarousel" className="carousel slide" data-bs-ride="carousel" style={{ paddingBottom: "60px" }}>
                 {/* Indicators */}
                 <div className="carousel-indicators">
                   {[

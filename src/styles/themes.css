@@ -122,12 +122,23 @@ body {
 
 .card-space,
 .space-card {
-  background: rgba(0, 25, 60, 0.8);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 18, 35, 0.55),
+    rgba(10, 12, 24, 0.55)
+  );
   backdrop-filter: blur(10px);
-  border: 1px solid #0066cc;
+  border: 1px solid rgba(120, 180, 255, 0.25);
   border-radius: 18px;
   padding: 20px;
   box-shadow: 0 0 25px rgba(0, 102, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-space:hover,
+.space-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(66, 165, 245, 0.5);
 }
 
 /* Panels inside slides */
@@ -311,8 +322,35 @@ body {
    CONTACT PAGE
    ========================================= */
 
+/* =========================================
+   CONTACT PAGE
+   ========================================= */
+
 .contact-container {
   color: #e9ddff;
+}
+
+.space-info-item h5 {
+  color: #81d4fa;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 8px rgba(25, 118, 210, 0.4);
+}
+
+.space-info-item p {
+  color: #b3e5fc;
+  margin-bottom: 0;
+}
+
+.contact-container h5 {
+  color: #81d4fa;
+  text-shadow: 0 0 8px rgba(25, 118, 210, 0.4);
+}
+
+.contact-container .form-label {
+  color: #81d4fa;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(25, 118, 210, 0.3);
 }
 
 .space-divider {
