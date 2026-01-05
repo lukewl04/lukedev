@@ -1,13 +1,17 @@
-import { useState } from 'react';
-import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
-import { Envelope, Phone, GeoAlt, Linkedin, Github } from 'react-bootstrap-icons';
-
-
-
+import { useState } from "react";
+import { Container, Row, Col, Form, Button, Card } from "react-bootstrap";
+import { Envelope, Phone, GeoAlt, Linkedin, Github } from "react-bootstrap-icons";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
-    const buildMailtoLink = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const buildMailtoLink = () => {
     const to = "lukelukewl@gmail.com";
 
     const subject = `Website contact from ${formData.name || "Someone"}`;
@@ -20,45 +24,35 @@ const Contact = () => {
       formData.message,
     ].join("\n");
 
-    // encodeURIComponent is IMPORTANT (handles spaces, new lines, symbols)
-    return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return `mailto:${to}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
   };
 
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [setSubmitted] = useState(false);
-//edit
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  const mailto = buildMailtoLink();
-  window.location.href = mailto;
+    const mailto = buildMailtoLink();
+    window.location.href = mailto;
 
-  // optional UI feedback
-  setSubmitted(true);
-  setTimeout(() => setSubmitted(false), 3000);
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
 
-  // optional: clear the form AFTER opening mail app
-  setFormData({ name: "", email: "", message: "" });
-};
-
+    setFormData({ name: "", email: "", message: "" });
+  };
 
   return (
     <Container className="my-5 contact-container">
       <h1 className="text-center mb-5 space-heading">Get In Touch</h1>
 
       <Row className="g-4">
-        
         {/* CONTACT INFORMATION */}
         <Col md={5}>
           <Card className="h-100 shadow-lg space-card">
@@ -69,7 +63,10 @@ const handleSubmit = (e: React.FormEvent) => {
                 <Envelope size={20} className="me-3 mt-1 icon-glow" />
                 <div>
                   <h5>Email</h5>
-                  <a href="mailto:lukelukewl@gmail.com" className="space-link">
+                  <a
+                    href="mailto:lukelukewl@gmail.com"
+                    className="space-link"
+                  >
                     lukelukewl@gmail.com
                   </a>
                 </div>
@@ -125,7 +122,11 @@ const handleSubmit = (e: React.FormEvent) => {
             <Card.Body className="p-4">
               <h3 className="mb-4 space-subheading">Send Me a Message</h3>
 
-
+              {submitted && (
+                <div className="alert alert-success mb-3">
+                  Email app opened — your message is prefilled.
+                </div>
+              )}
 
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
@@ -151,6 +152,7 @@ const handleSubmit = (e: React.FormEvent) => {
                     required
                   />
                 </Form.Group>
+
                 <Form.Group className="mb-4">
                   <Form.Label>Message</Form.Label>
                   <Form.Control
@@ -171,7 +173,6 @@ const handleSubmit = (e: React.FormEvent) => {
             </Card.Body>
           </Card>
 
-          {/* EXTRA INFO BOX */}
           <div className="mt-4 p-4 space-panel rounded">
             <h4 className="space-subheading mb-3">What to expect</h4>
             <ul className="list-unstyled">
