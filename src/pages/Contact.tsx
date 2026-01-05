@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container, Row, Col, Form, Button, Card, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap';
 import { Envelope, Phone, GeoAlt, Linkedin, Github } from 'react-bootstrap-icons';
 
 
