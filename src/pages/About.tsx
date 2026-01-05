@@ -1,24 +1,6 @@
 import DownloadCV from "../components/Cv";
-import { useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
-const SLIDE_COUNT = 5;
 
 const About = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev === 0 ? SLIDE_COUNT - 1 : prev - 1));
-  };
-
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev === SLIDE_COUNT - 1 ? 0 : prev + 1));
-  };
-
-  const goToSlide = (index: number) => {
-    setActiveIndex(index);
-  };
-
   return (
     <div className="container my-5 about-container">
       <div className="row justify-content-center">
@@ -29,42 +11,33 @@ const About = () => {
             </div>
 
             <div className="card-body">
-              {/* Indicators */}
-              <div className="carousel-indicators position-static mb-4">
-                {[
-                  "Profile",
-                  "Skills",
-                  "Education",
-                  "Experience",
-                  "Projects",
-                ].map((label, index) => (
-                  <button
-                    key={index}
-                    type="button"
-                    className={activeIndex === index ? "active" : ""}
-                    aria-current={activeIndex === index}
-                    aria-label={label}
-                    onClick={() => goToSlide(index)}
-                  />
-                ))}
-              </div>
+              {/* Bootstrap Carousel */}
+              <div style={{ position: "relative", paddingLeft: "80px", paddingRight: "80px" }}>
+                <div id="aboutCarousel" className="carousel slide" data-bs-ride="carousel">
+                {/* Indicators */}
+                <div className="carousel-indicators">
+                  {[
+                    { index: 0, label: "Profile" },
+                    { index: 1, label: "Skills" },
+                    { index: 2, label: "Education" },
+                    { index: 3, label: "Experience" },
+                    { index: 4, label: "Interests" },
+                  ].map((item) => (
+                    <button
+                      key={item.index}
+                      type="button"
+                      data-bs-target="#aboutCarousel"
+                      data-bs-slide-to={item.index}
+                      className={item.index === 0 ? "active" : ""}
+                      aria-label={item.label}
+                    />
+                  ))}
+                </div>
 
-              {/* Layout: Arrow | Content | Arrow */}
-              <div className="about-carousel-layout">
-                {/* Left Arrow */}
-                <button
-                  className="nav-arrow carousel-arrow"
-                  onClick={handlePrev}
-                  aria-label="Previous slide"
-                  type="button"
-                >
-                  <FaArrowLeft size={18} />
-                </button>
-
-                {/* Slide Content */}
-                <div className="carousel-content">
+                {/* Carousel Items */}
+                <div className="carousel-inner">
                   {/* PROFILE */}
-                  {activeIndex === 0 && (
+                  <div className="carousel-item active">
                     <section className="space-section text-center text-bright">
                       <h2 className="space-subheading">Luke Livingston</h2>
                       <p className="lead">Software Development Student</p>
@@ -76,10 +49,10 @@ const About = () => {
                         development, and data-driven solutions using Python.
                       </p>
                     </section>
-                  )}
+                  </div>
 
                   {/* SKILLS */}
-                  {activeIndex === 1 && (
+                  <div className="carousel-item">
                     <section className="space-section">
                       <h3 className="text-center space-subheading mb-4">
                         Technical Skills
@@ -101,10 +74,10 @@ const About = () => {
                         </div>
                       </div>
                     </section>
-                  )}
+                  </div>
 
                   {/* EDUCATION */}
-                  {activeIndex === 2 && (
+                  <div className="carousel-item">
                     <section className="space-section">
                       <h3 className="text-center space-subheading mb-4">
                         Education
@@ -125,11 +98,11 @@ const About = () => {
                         <p>Higher & National Qualifications</p>
                       </div>
                     </section>
-                  )}
+                  </div>
 
 
                   {/* EXPERIENCE */}
-                  {activeIndex === 3 && (
+                  <div className="carousel-item">
                     <section className="space-section">
                       <h3 className="text-center space-subheading mb-4">
                         Work Experience
@@ -149,36 +122,47 @@ const About = () => {
                         </p>
                       </div>
                     </section>
-                  )}
+                  </div>
 
-                  {/* PROJECTS / INTERESTS */}
-                  {activeIndex === 4 && (
+                  {/* INTERESTS */}
+                  <div className="carousel-item">
                     <section className="space-section">
-                      <h3 className="text-center space-subheading mb-4">
-                        Intrests
+                        <h3 className="text-center space-subheading mb-4">
+                        Interests
                       </h3>
 
                       <div className="space-panel p-4 mb-3">
                         <ul>
                           <li>Programming</li>
                           <li>Health and Fitness</li>
-                          <li>Martial Arts (Boxing,Kickboxing)</li>
+                          <li>Martial Arts (Boxing, Kickboxing)</li>
                           <li>Gym</li>
                         </ul>
                       </div>
                     </section>
-                  )}
+                  </div>
                 </div>
 
-                {/* Right Arrow */}
+                {/* Controls */}
                 <button
-                  className="nav-arrow carousel-arrow"
-                  onClick={handleNext}
-                  aria-label="Next slide"
+                  className="carousel-control-prev"
                   type="button"
+                  data-bs-target="#aboutCarousel"
+                  data-bs-slide="prev"
                 >
-                  <FaArrowRight size={18} />
+                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Previous</span>
                 </button>
+                <button
+                  className="carousel-control-next"
+                  type="button"
+                  data-bs-target="#aboutCarousel"
+                  data-bs-slide="next"
+                >
+                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span className="visually-hidden">Next</span>
+                </button>
+              </div>
               </div>
 
               <div className="text-center mt-4">
