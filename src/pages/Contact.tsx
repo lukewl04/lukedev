@@ -125,11 +125,7 @@ const handleSubmit = (e: React.FormEvent) => {
             <Card.Body className="p-4">
               <h3 className="mb-4 space-subheading">Send Me a Message</h3>
 
-              {submitted && (
-                <Alert variant="success" className="space-alert">
-                  Im sorry, this feature hasnt been implemented yet. Please Email me.
-                </Alert>
-              )}
+
 
               <Form onSubmit={handleSubmit}>
                 <Form.Group className="mb-3">
