@@ -1,5 +1,13 @@
 const projects = [
   {
+    title: "Property Price Intelligence Platform",
+    image: "/housepriceprediction.png",
+    description:
+      "A full-stack ML web app that predicts residential property prices across England and Wales using government datasets and an XGBoost model.",
+    tech: ["React", "TypeScript", "Vite", "FastAPI", "Python", "XGBoost"],
+    link: "https://property-price-intelligence-platfor.vercel.app/",
+  },
+  {
     title: "Planet Tracker",
     image: "/planet_tracker.png",
     description:
