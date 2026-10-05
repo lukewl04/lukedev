@@ -6,13 +6,11 @@ import MyNavbar from "./components/Navbar";
 import StarField from "./components/StarField";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/themes.css";
-import NebulaParallax from "./components/NebulaParallax";
+import BlackBackground from "./components/BlackBackground";
 function App() {
   return (
     <div className="app-container">
-      <div className="nebula-back" />
-      <div className="nebula-front" />
-      <NebulaParallax /> 
+      <BlackBackground />
       {/* ⭐ Dynamic Starfield Background */}
       <StarField />
       {/* Navbar */}

@@ -2,7 +2,7 @@ import DownloadCV from "../components/Cv";
 
 const About = () => {
   return (
-    <div className="container my-5 about-container">
+    <div className="container my-5">
       <div className="row justify-content-center">
         <div className="col-md-10">
           <div className="card space-card shadow-lg">
@@ -40,12 +40,12 @@ const About = () => {
                   <div className="carousel-item active">
                     <section className="space-section text-center text-bright">
                       <h2 className="space-subheading">Luke Livingston</h2>
-                      <p className="lead">Software Development Student</p>
-                      <p>Paisley · lukelukewl@gmail.com</p>
+                      <p className="lead">Software Development Graduate</p>
+                      <p>Johnstone· lukelukewl@gmail.com</p>
 
                       <p className="fs-5 px-md-5">
-                        Final-year Software Development student at Glasgow Caledonian University,
-                        passionate about building real-world applications that combine machine learning,
+                        First Class Software Development Graduate with Honours.
+                        Passionate about building real-world applications that combine machine learning,
                         full-stack development, and clean software engineering.
                       </p>
 

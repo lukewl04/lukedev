@@ -2,16 +2,29 @@ const Home: React.FC = () => {
   return (
     <div className="container text-center">
       <div className="card-space mx-auto home-hero" style={{ maxWidth: "650px" }}>
-        <p className="text-uppercase mb-2" style={{ letterSpacing: "0.15em", fontSize: "0.8rem" }}>
-          Software Development • Machine Learning • Full Stack 
+        <p
+          className="text-uppercase mb-3 d-inline-block"
+          style={{
+            letterSpacing: "0.15em",
+            fontSize: "0.8rem",
+            borderBottom: "2px solid currentColor",
+            paddingBottom: "6px",
+          }}
+        >
+          Hello, I'm
         </p>
 
-        <h1 className="space-text mb-3">Hello, I'm Luke!</h1>
+        <h1 className="space-text mb-3" style={{
+            letterSpacing: "0.05em",
+          }}>Luke Livingston</h1>
 
-        <p className="mt-2">
-          Software development student at Glasgow Caledonian University focused on machine learning, full-stack development, and data-driven solutions with Python.
-          Feel free to explore my projects!
+        <p className="mt2"           style={{
+            letterSpacing: "0.15em",
+            fontSize: "0.8rem",
+          }}>
+          First Class Software development Graduate focused on machine learning, full-stack development, and data-driven solutions.
         </p>
+
 
         {/* CTA buttons */}
         <div className="d-flex justify-content-center gap-3 mt-4 flex-wrap">
