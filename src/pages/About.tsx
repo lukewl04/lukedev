@@ -2,38 +2,18 @@ import DownloadCV from "../components/Cv";
 
 const About = () => {
   return (
-    <div className="container my-5">
+    <div className="container my-5 about-page">
       <div className="row justify-content-center">
         <div className="col-md-10">
-          <div className="card space-card shadow-lg">
+          <div className="card space-card shadow-lg about-page-card">
             <div className="card-header space-card-header">
               <h1 className="text-center space-heading">About Me</h1>
             </div>
 
             <div className="card-body">
               {/* Bootstrap Carousel */}
-              <div style={{ position: "relative", paddingLeft: "80px", paddingRight: "80px" }}>
-                <div id="aboutCarousel" className="carousel slide" data-bs-ride="carousel" style={{ paddingBottom: "60px" }}>
-                {/* Indicators */}
-                <div className="carousel-indicators">
-                  {[
-                    { index: 0, label: "Profile" },
-                    { index: 1, label: "Skills" },
-                    { index: 2, label: "Education" },
-                    { index: 3, label: "Experience" },
-                    { index: 4, label: "Interests" },
-                  ].map((item) => (
-                    <button
-                      key={item.index}
-                      type="button"
-                      data-bs-target="#aboutCarousel"
-                      data-bs-slide-to={item.index}
-                      className={item.index === 0 ? "active" : ""}
-                      aria-label={item.label}
-                    />
-                  ))}
-                </div>
-
+              <div className="about-carousel-frame">
+                <div id="aboutCarousel" className="carousel slide" data-bs-ride="carousel">
                 {/* Carousel Items */}
                 <div className="carousel-inner">
                   {/* PROFILE */}
@@ -230,25 +210,46 @@ const About = () => {
                   </div>
                 </div>
 
-                {/* Controls */}
-                <button
-                  className="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#aboutCarousel"
-                  data-bs-slide="prev"
-                >
-                  <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span className="visually-hidden">Previous</span>
-                </button>
-                <button
-                  className="carousel-control-next"
-                  type="button"
-                  data-bs-target="#aboutCarousel"
-                  data-bs-slide="next"
-                >
-                  <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span className="visually-hidden">Next</span>
-                </button>
+                <div className="about-carousel-navigation">
+                  <div className="about-carousel-arrows">
+                    <button
+                      className="carousel-control-prev"
+                      type="button"
+                      data-bs-target="#aboutCarousel"
+                      data-bs-slide="prev"
+                    >
+                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button
+                      className="carousel-control-next"
+                      type="button"
+                      data-bs-target="#aboutCarousel"
+                      data-bs-slide="next"
+                    >
+                      <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span className="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                  <div className="carousel-indicators">
+                    {[
+                      { index: 0, label: "Profile" },
+                      { index: 1, label: "Skills" },
+                      { index: 2, label: "Education" },
+                      { index: 3, label: "Experience" },
+                      { index: 4, label: "Interests" },
+                    ].map((item) => (
+                      <button
+                        key={item.index}
+                        type="button"
+                        data-bs-target="#aboutCarousel"
+                        data-bs-slide-to={item.index}
+                        className={item.index === 0 ? "active" : ""}
+                        aria-label={item.label}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
               </div>
 

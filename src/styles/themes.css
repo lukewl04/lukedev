@@ -271,6 +271,11 @@ body {
   text-shadow: 0 0 4px rgba(25, 118, 210, 0.6);
 }
 
+.about-carousel-frame {
+  position: relative;
+  padding: 0 80px;
+}
+
 .about-carousel-layout {
   display: grid;
   grid-template-columns: 48px 1fr 48px;
@@ -316,6 +321,7 @@ body {
 /* Position carousel controls outside the carousel */
 #aboutCarousel {
   position: relative;
+  padding-bottom: 60px;
 }
 
 #aboutCarousel .carousel-inner {
@@ -345,10 +351,35 @@ body {
 }
 
 @media (max-width: 768px) {
+  .about-page {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .about-page-card {
+    padding: 0.75rem !important;
+  }
+
+  .about-page-card .card-body {
+    padding: 0.75rem;
+  }
+
+  .about-carousel-frame {
+    padding: 0;
+  }
+
+  #aboutCarousel {
+    padding-bottom: 0;
+  }
+
   #aboutCarousel .carousel-inner,
   #aboutCarousel .carousel-item,
   #aboutCarousel .space-section {
-    height: 580px;
+    height: auto;
+  }
+
+  #aboutCarousel .space-section {
+    overflow: visible;
   }
 }
 
@@ -462,13 +493,33 @@ body {
 }
 
 @media (max-width: 768px) {
-  .carousel-control-prev,
-  .carousel-control-next {
+  #aboutCarousel .about-carousel-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.75rem;
+  }
+
+  #aboutCarousel .about-carousel-arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  #aboutCarousel .carousel-indicators {
+    position: static;
+    margin: 0;
+    justify-content: center;
+  }
+
+  #aboutCarousel .carousel-control-prev,
+  #aboutCarousel .carousel-control-next {
     position: static;
     transform: none;
     opacity: 1;
-    display: inline-block;
-    margin: 0 10px;
+    margin: 0;
   }
 }
 
@@ -801,5 +852,3 @@ html {
 .project-link:hover {
   text-decoration: underline;
 }
-
-
